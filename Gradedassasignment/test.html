@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let csv = 'ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor`s Assistant,26';
+
+let userRows = csv.split (`\n`);
+console.log(userRows);
+ let headers = userRows[0].split(`,`);
+ 
+ 
+ let arrayObj = []
+
+ console.log(headers)
+    for (i =1 ; i< userRows.length; i++){
+        var rowInput = userRows[i].split(`,`)
+   arrayObj[i] = {}
+
+   for (let y = 0 ; y< rowInput.length; y++){
+   
+    
+        arrayObj[i][headers[y]] = rowInput[y]}
+
+         headers.keys.toLowerCase;
+
+        console.table(arrayObj[i]);
+
+        const ID= [42,57,63,98];
+        const Names=["bruce","Bob","Blaine","Bill"];
+        const Occupation= ["Knight","Fry cook", "Quizz master","Doctor's assistance"];
+        const Ages =[41,19,58,26];
+
+
+        const User1 ={
+                    id: ID[0],
+                  name: Names[0],
+            occupation: Occupation[0],
+                   age:Ages[0]
+                    }
+
+        const User2 ={
+                    id: ID[1],
+                  name: Names[1],
+            occupation: Occupation[1],
+                   age:Ages[1]
+                    }      
+           
+        const User3 ={
+                    id: ID[2],
+                  name: Names[2],
+            occupation: Occupation[2],
+                   age:Ages[2]
+                    }    
+                    
+        const User4 ={
+                    id: ID[3],
+                  name: Names[3],
+            occupation: Occupation[3],
+                   age:Ages[3]
+                    }     
+console.log(User1);
+console.log(User2);
+console.log(User3);
+console.log(User4) ;  
+
+
+const removeLast= ID.pop();
+console.log(removeLast)
+
+
+
+const IDindex1=  removeLast+ " ,"  +   ID.slice(1,3) ;
+console.log(IDindex1)
+
+
+ let averageAges = 0;
+ for (let i=0; i<Ages.length ; i++){
+
+    averageAges +=Ages[i]/4;
+console.log(averageAges)
+}
+
+
+let n = 10
+
+
+
+for (let i= 2; i<n; i++) 
+{
+    if(n%i ===0 )
+        break;
+}
+if (n==i ) console.log('it;s a prime number ' +i);
+    else  console.log("it's not a prime " + i)
+
+
+
+                    
+} 
+
+
+        
+
+
+   
+
+
+  { let arrtoCSV=  userRows.join("/n ") ;
+   
+console.log (arrtoCSV);}
+
+
+
+
+      
+
+   
+    </script>
+</body>
+</html>
