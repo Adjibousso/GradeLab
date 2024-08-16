@@ -33,10 +33,13 @@ var menuLinks = [
 const mainEl = document.querySelector("main");
 mainEl.style.backgroundColor = "var(--main-bg)";
 
-mainEl.innerHTML = "<h1>Javascrit Dom html</h>";
+
 
 mainEl.classList.add("flex-ctr");
 
+let h1Elelement = document.createElement("h1");
+h1Elelement.textContent = "Javascript Dom html";
+mainEl.appendChild(h1Elelement);
 let topMenuEl = document.getElementById("top-menu");
 
 
@@ -52,6 +55,7 @@ menuLinks.forEach((link) => {
   a.textContent = link.text;
   topMenuEl.appendChild(a);
 });
+
 
 // #4. adding menu interaction
 // Select and cache all <a> elements inside of topMenuEl in variable topMenuLinks
@@ -125,29 +129,32 @@ console.log(clickMenu.subLinks)
 
 
 
-//  subLinks.forEach((lin) => {
-//     const a = document.createElement("a");
-//     a.setAttribute("href", lin.href);
-//     a.textContent = lin.text;
-//     subMenuEl.appendChild(a);
-//   });
+
+//   function buildsubmenu , create anchors
 });
  function buildSubmenu(sublink){
     subMenuEl.innerHTML= "";
+    
     sublink.forEach((link) =>{
         const a = document.createElement("a");
         a.href= link.href;
         a.textContent = link.text;
 
         subMenuEl.appendChild(a);
+        
 
     })
-   // buildSubmenu()
-
-
     
 
  }
-
+ subMenuEl.addEventListener("click", (e) => {
+    // call the event object's preventDefault() method
+    e.preventDefault();
+    
+    h1Elelement.textContent = e.target.textContent;
+    
+    h1Elelement.style.textTransform = "capitalize";
+ 
+  });
 
 
