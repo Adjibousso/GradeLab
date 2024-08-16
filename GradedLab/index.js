@@ -83,11 +83,7 @@ if (e.target.classList.contains("active")){
     e.target.classList.remove("active");
     return;
 };
-topMenuLinks.forEach( (link) => {
-    link.classList.remove('active');
 
-    // console.log(link);
-    });   
 
 
 //  adding active class
@@ -151,10 +147,23 @@ console.log(clickMenu.subLinks)
     // call the event object's preventDefault() method
     e.preventDefault();
     
+    if (e.target.tagName.toLowerCase() !== "a") 
+        {return};
+    
+    console.log(e.target);
+    
+    topMenuLinks.forEach( (link) => {
+        link.classList.remove('active');
+    
+
+    
     h1Elelement.textContent = e.target.textContent;
     
     h1Elelement.style.textTransform = "capitalize";
- 
-  });
+});
+
+
+    // console.log(link);
+    });   
 
 
